@@ -1,0 +1,67 @@
+<br /><br /><br /><br />
+
+<div class="row">
+  <div class="col-lg-7 col-md-6">
+    <br /><br /><br /><br />
+    <div class="slider_text">
+      <h3 class="wow fadeInRight" data-wow-duration="1s" data-wow-delay=".1s">Get Loan for your Business growth or
+        startup</h3>
+      <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">
+
+      </div>
+    </div>
+
+  </div>
+  <!-- inbetween part -->
+  <div class="col-lg-4 col-md-4">
+    <div class="float-right">
+      <!-- <h3 class="text-primary font-weight-bold">Login</h3> -->
+
+      <br />
+      <!---->
+      <div class="card" style="width: 350px;">
+        <br/>
+        <!-- <h4 class="card-header text-primary font-weight-bold text-center" style="background:#1161ee;">Signin</h4> -->
+
+        <div class="card-body">
+          <form [formGroup]="loginForm" (ngSubmit)="verifyLogin()">
+            <div class=" form-group ">
+              <label for="username" class="label">Username</label>
+              <input type="username" class="form-control" formControlName="username" placeholder="Username" />
+
+              <div *ngIf="submitted && loginForm.controls.username.errors" class="error">
+                <div class="text-danger" *ngIf="loginForm.controls.username.errors.required">
+                  Username is required..
+                </div>
+              </div>
+              <!--End of password-->
+            </div>
+            <div class="form-group ">
+              <label for="password" class="label">Password</label>
+              <input type="password" class="form-control" formControlName="password" placeholder="Password" />
+
+
+              <div *ngIf="submitted && loginForm.controls.password.errors" class="error">
+                <div class="text-danger" *ngIf="loginForm.controls.password.errors.required">
+                  Password is required..
+                </div>
+              </div>
+
+            </div>
+
+            
+            <button  class=" button" >Sign in</button> &nbsp;
+            <!-- <a class="btn btn-primary" >Login</a>&nbsp; -->
+
+            <button  class=" button" routerLink="/register"  >New User</button>
+
+            <br />
+            <br />
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

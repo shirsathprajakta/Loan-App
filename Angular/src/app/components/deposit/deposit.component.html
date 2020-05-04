@@ -1,0 +1,57 @@
+<div class="container-fluid">
+    <div class="row">
+        <app-nav-bar></app-nav-bar>
+<div class="col-lg-8 col-md-8">
+    <div class="float-right">
+        <!-- <h3 class="text-primary">Enter following details to deposit..</h3> -->
+
+        <br /><br/>
+        <br /><br/>
+        <!---->
+        <div class="card">
+
+            <div class="card-body" style="width: 450px;">
+        <form [formGroup]="depoForm" (ngSubmit)="deposit()">
+            <div>{{Msg}}</div>
+            <div class="form-group">
+                <label class="label">Account Number</label>
+                <input type="text" placeholder="Enter Account Number Here.." formControlName="accno"
+                    class="form-control" knifeOnlyNumbers/>
+                <div *ngIf="depoForm.get('accno').errors && submitted">
+                    <div *ngIf="depoForm.get('accno').hasError('required')">
+                        <span style="color: red;">Please Enter Account Number.</span>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!---->
+
+            <div class="form-group">
+                <label  for="amount" class="label">Enter amount</label>
+                <input type="amount" class="form-control" formControlName="amount" placeholder="amount" knifeOnlyNumbers/>
+
+
+                <div *ngIf="submitted && depoForm.controls.amount.errors" class="error">
+                    <div class="text-danger" *ngIf="depoForm.controls.amount.errors.required">
+                        amount is required..
+                    </div>
+                </div>
+
+            </div>
+
+            <!---->
+            <button type="submit" class="button">Deposit</button> &nbsp;
+            <!-- <a class="btn btn-primary" routerLink="/functions">Back</a> -->
+
+        </form>
+    </div>
+    <!-- <div *ngIf="submitted">
+        You have successfully deposited amount of :{{emi}};
+    </div> -->
+</div>
+</div>
+</div>
+</div>
+</div>

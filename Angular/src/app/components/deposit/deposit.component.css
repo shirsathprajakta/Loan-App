@@ -1,0 +1,40 @@
+.card{
+    background:rgba(40,57,101,.9);
+  }
+  body{
+  margin:0;
+  background:#c8c8c8;
+  font:600 16px/18px 'Open Sans',sans-serif;
+  }
+  
+  .card-body .form-group .label{
+  color: white;
+  font-size:16px;
+  }
+  input
+  {
+    border-radius: 40px;
+  
+    background:rgba(255,255,255,.1);
+    outline: 0;
+    border: none;
+  }
+  
+  .button {
+  
+    border: none;
+  
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    background:#1161ee;
+  }
+  .btn-group{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+  }

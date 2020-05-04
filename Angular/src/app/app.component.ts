@@ -1,0 +1,17 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'WELCOME TO WELFARE BANK';
+  todaysDate = new Date();
+
+  constructor()
+  {
+    //SETINTERVAL asynmdhromnous function
+    setInterval(()=>{this.todaysDate=new Date()},1000);
+  }
+}

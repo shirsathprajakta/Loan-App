@@ -1,0 +1,71 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <app-nav-bar></app-nav-bar>
+<div class="col-lg-8 col-md-8">
+    <div class="float-right">
+      
+        <!-- <h3 class="text-primary">Enter following details to apply for loan..</h3> -->
+
+        <br /><br/>
+        <br /><br/>
+        <!---->
+        <div class="card">
+
+            <div class="card-body" style="width: 450px;">
+        <form [formGroup]="loanForm" (ngSubmit)="apply()">
+            <div>{{Msg}}</div>   
+            <div class="form-group">
+                <label class="label">Account Number</label>
+                <input type="text" placeholder="Enter Account Number Here.." formControlName="accno"
+                    class="form-control" knifeOnlyNumbers />
+                <div *ngIf="loanForm.get('accno').errors && submitted">
+                    <div *ngIf="loanForm.get('accno').hasError('required')">
+                        <span style="color: red;">Please Enter Account Number.</span>
+                    </div>
+                    <div *ngIf="loanForm.get('accno').hasError('pattern')">
+                        <span style="color: red;">Account no should not contain letters.</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!---->
+
+            <!-- <div class="form-group">
+                <label for="loanamount">Enter Loanamount</label>
+                <input type="loanamount" class="form-control" formControlName="loanamount" placeholder="loanamount" />
+
+
+                <div *ngIf="submitted && loanForm.controls.loanamount.errors" class="error">
+                    <div class="text-danger" *ngIf="loanForm.controls.loanamount.errors.required">
+                        Loanamount is required..
+                    </div>
+                </div>
+
+            </div> -->
+            <div class="form-group">
+                <label class="label">Loan Amount</label>
+                <input type="text" placeholder="Enter Loan Amount Here.." formControlName="loanamount"
+                    class="form-control" knifeOnlyNumbers/>
+                <div *ngIf="loanForm.get('loanamount').errors && submitted">
+                    <div *ngIf="loanForm.get('loanamount').hasError('required')">
+                        <span style="color: red;">Please Enter Loan amount.</span>
+                    </div>
+                    <div *ngIf="loanForm.get('loanamount').hasError('pattern')">
+                        <span style="color: red;">Loan amount should not contain letters.</span>
+                    </div>
+
+                </div>
+            </div>
+            <!---->
+            <button type="submit" class="button">Apply</button> &nbsp;
+
+            <!-- <a class="btn btn-primary" routerLink="/functions">Back</a> -->
+        </form>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>

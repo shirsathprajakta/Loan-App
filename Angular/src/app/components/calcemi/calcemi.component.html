@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <div class="row">
+        <app-nav-bar></app-nav-bar>
+<div class="col-lg-8 col-md-8">
+    <div class="float-right">
+        <!-- <h3 class="text-primary">Enter following details to calculate EMI..</h3> -->
+
+        <br /><br/>
+        <br /><br/>
+        <!---->
+        <div class="card">
+
+            <div class="card-body" style="width: 450px;">
+        <form [formGroup]="calemiForm" (ngSubmit)="calculate()">
+
+            <div class="form-group">
+                <label class="label" for="loanamount">Enter Loanamount</label>
+                <input type="loanamount" class="form-control" formControlName="loanamount" placeholder="loanamount" knifeOnlyNumbers/>
+
+
+                <div *ngIf="submitted && calemiForm.controls.loanamount.errors" class="error">
+                    <div class="text-danger" *ngIf="calemiForm.controls.loanamount.errors.required">
+                        Loanamount is required..
+                    </div>
+                </div>
+
+            </div>
+            
+            <!---->
+            <div class="form-group">
+                <label class="label">Period</label>
+                <input type="text" placeholder="Enter Period" formControlName="period"
+                    class="form-control" knifeOnlyNumbers/>
+                <div *ngIf="calemiForm.get('period').errors && submitted">
+                    <div *ngIf="calemiForm.get('period').hasError('required')">
+                        <span style="color: red;">Please Enter period.</span>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <!---->
+            <div class="form-group">
+                <label class="label" for="rate">Enter rate</label>
+                <input type="rate" class="form-control" formControlName="rate" placeholder="rate"  knifeOnlyNumbers/>
+
+
+                <div *ngIf="submitted && calemiForm.controls.rate.errors" class="error">
+                    <div class="text-danger" *ngIf="calemiForm.controls.rate.errors.required">
+                        rate is required..
+                    </div>
+                </div>
+
+            </div>
+            
+            <!---->
+            <button type="submit" class="button" >Calculate</button> &nbsp;
+           
+            <!-- <a class="btn btn-primary" routerLink="/functions">Back</a> -->
+            </form>
+            </div>
+            <div *ngIf="submitted">
+                <!-- EMI is:{{emi}}; -->
+            </div>
+            </div>
+            </div>
+            </div>
+</div>
+</div>

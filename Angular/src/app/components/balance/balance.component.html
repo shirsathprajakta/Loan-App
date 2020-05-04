@@ -1,0 +1,57 @@
+ <!-- <app-nav-bar></app-nav-bar> -->
+<!-- <div class="container"> -->
+    <!-- <div class="row"> -->
+        <!-- <div class="col-md-3 offset-md-3">
+            <app-nav-bar></app-nav-bar>
+             </div> -->
+            <!-- <div class="col-md-3 offset-md-3">
+            <div class="float-right"> -->
+
+            <!-- <div *ngIf="submitted">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <h4 class="text-primary">  Balance is:{{bal}};</h4>
+                </div>
+            </div>-->
+        <!-- </div> --> 
+        <!-- <div class="row"> -->
+            <div class="container-fluid">
+                <div class="row">
+                    <app-nav-bar></app-nav-bar>
+        <div class="col-lg-8 col-md-8">
+            <div class="float-right">
+                <!-- <h3 class="text-primary">Enter following details to see the balance..</h3> -->
+
+                <br /><br/>
+                <br /><br/>
+                <!---->
+                <div class="card">
+
+                    <div class="card-body" style="width: 450px;">
+                        <form [formGroup]="balForm" (ngSubmit)="Balance()">
+                            <div>{{bal}}</div> 
+                            <div class="form-group">
+                                <label class="label">Account Number</label>
+                                <input type="text" placeholder="Enter Account Number Here.." formControlName="accno"
+                                    class="form-control" knifeOnlyNumbers/>
+                                <div *ngIf="balForm.get('accno').errors && submitted">
+                                    <div *ngIf="balForm.get('accno').hasError('required')">
+                                        <span style="color: red;">Please Enter Account Number.</span>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <button type="submit" class="button" >show</button> &nbsp;
+                            <!-- <a class="btn btn-primary" routerLink="/functions">Back</a> -->
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div> 
+
+        
+        
+        <!-- </div>  -->

@@ -1,0 +1,81 @@
+<div class="container-fluid">
+    <div class="row">
+        <app-nav-bar></app-nav-bar>
+        <div class="col-lg-8 col-md-8">
+            <div class="float-right">
+             <!-- <h3 class="text-primary">Enter following details to print the transaction..</h3> -->
+
+                <br /><br/>
+                <br /><br/>
+                <!---->
+                <div class="card">
+
+                    <div class="card-body" style="width: 450px;">
+                        <form [formGroup]="printForm" (ngSubmit)="transactions()">
+                            <div>{{Msg}}</div>
+                            <div class="form-group">
+                                <label class="label">Account Number</label>
+                                <input type="text" placeholder="Enter Account Number Here.." formControlName="accountNo"
+                                    class="form-control" knifeOnlyNumbers/>
+                                <div *ngIf="printForm.get('accountNo').errors && submitted">
+                                    <div *ngIf="printForm.get('accountNo').hasError('required')">
+                                        <span style="color: red;">Please Enter Account Number.</span>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <!---->
+
+
+
+                            <!---->
+                            <button type="submit" class="button">Transactions</button> &nbsp;
+
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-md-8">
+                    <div class="float-right float-right">
+                        <div *ngIf="submitted">
+
+                            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;
+                            <table class="table table-striped table-responsive table-hover" style="color: white;" border="2" >
+                                <thead>
+                                    <tr>
+
+                                        <th>Id</th>
+                                        <th>Message</th>
+                                    </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                    <tr *ngFor="let user of trans">
+
+                                        <td>{{user.id}}</td>
+                                        <td>{{user.message}}</td>
+
+
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
